@@ -35,18 +35,28 @@ Hanya jika Anda membutuhkan fitur transaksi rumit seperti payment gateway otomat
 
 ---
 
-## 🔐 Cara Masuk ke Halaman Admin Pengelola Kos
+## 🔐 Panel Admin Pengelola Kos (Default Credentials)
 
-Halaman admin dapat diakses dengan cara:
-1. Akses URL: [http://localhost:5173/#admin](http://localhost:5173/#admin) (atau `/admin`).
-2. Atau scroll ke bagian paling bawah landing page (Footer), lalu klik tautan **"🔒 Kelola Kos (Admin)"**.
-3. Masukkan PIN keamanan: **`admin123`**.
-4. Di panel ini Anda bisa:
-   - Mengubah nama kos, nomor WhatsApp, alamat, dan promo.
-   - Mengubah status kamar (Tersedia / Penuh) dan harga sewa secara visual.
-   - Mengedit tata tertib aturan kos dan pertanyaan FAQ.
-   - Klik **"Terapkan Perubahan"** untuk melihat perubahan langsung di browser.
-   - Klik **"Download JSON"** jika ingin menyimpan file konfigurasi baru tersebut secara permanen ke project (`src/data/kosData.json`).
+Halaman admin khusus pengelola kos sudah terpasang dan dilindungi PIN.
+
+| Akses Admin | Keterangan |
+| :--- | :--- |
+| **URL Admin** | [http://localhost:5173/#admin](http://localhost:5173/#admin) (atau via tombol *🔒 Kelola Kos* di footer) |
+| **Default PIN** | **`admin123`** |
+| **File Konfigurasi PIN** | [`src/components/AdminDashboard.jsx`](src/components/AdminDashboard.jsx) *(baris ke-18)* |
+
+### Fitur yang Dapat Dikelola di Panel Admin:
+- **Profil Kos:** Ubah Nama Kos, Nomor WhatsApp, Alamat, Catatan Lokasi, Tagline, dan Tampilan Harga.
+- **Kelola Kamar:**
+  - Tambah tipe kamar baru (**+ Tambah Tipe Kamar Baru**).
+  - Hapus tipe kamar yang sudah tidak aktif.
+  - Upload foto kamar langsung dari komputer ke **Supabase Storage** (bucket `kos-images`).
+  - Ganti harga bulanan, dimensi kamar, dan daftar fasilitas.
+  - Ubah status kamar kosong: **Tersedia (Sisa X Kamar)** atau **Penuh** dalam 1 klik.
+- **Tanya Jawab (FAQ):** Tambah dan ubah pertanyaan yang sering diajukan calon penyewa.
+- **Penyimpanan:**
+  - Klik **"Simpan ke Supabase"** untuk menyimpan perubahan secara langsung ke cloud database Supabase.
+  - Klik **"Download JSON"** jika ingin mengunduh cadangan data offline.
 
 ---
 

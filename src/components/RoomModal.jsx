@@ -13,12 +13,12 @@ export default function RoomModal({ room, kosInfo, onClose }) {
   const waUrl = getWhatsAppLink(kosInfo.whatsappNumber, waBookingMessage);
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 overflow-y-auto no-scrollbar bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
       
       {/* Backdrop click close */}
       <div className="fixed inset-0" onClick={onClose} />
 
-      <div className="relative bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 z-10">
+      <div className="relative bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto no-scrollbar shadow-2xl border border-slate-100 z-10">
         
         {/* Close Button */}
         <button
