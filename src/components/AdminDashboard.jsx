@@ -329,7 +329,7 @@ export default function AdminDashboard({
                 placeholder="Masukkan PIN Keamanan"
                 value={pinInput}
                 onChange={(e) => setPinInput(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-center text-lg tracking-widest focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 text-center text-lg tracking-widest focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 autoFocus
               />
               {pinError && <p className="text-xs text-red-500 mt-2 font-medium">{pinError}</p>}
@@ -504,7 +504,7 @@ export default function AdminDashboard({
                   type="text"
                   value={formData.kosInfo.name}
                   onChange={(e) => handleInfoChange('name', e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
               </div>
 
@@ -515,7 +515,7 @@ export default function AdminDashboard({
                   value={formData.kosInfo.badge}
                   onChange={(e) => handleInfoChange('badge', e.target.value)}
                   placeholder="Contoh: Eksklusif & Nyaman"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
               </div>
 
@@ -526,7 +526,7 @@ export default function AdminDashboard({
                   value={formData.kosInfo.whatsappNumber}
                   onChange={(e) => handleInfoChange('whatsappNumber', e.target.value)}
                   placeholder="Contoh: 6281234567890"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
                 <span className="text-[11px] text-slate-400">Gunakan format internasional tanpa tanda + (misal 628123...)</span>
               </div>
@@ -538,7 +538,7 @@ export default function AdminDashboard({
                   value={formData.kosInfo.whatsappDisplay}
                   onChange={(e) => handleInfoChange('whatsappDisplay', e.target.value)}
                   placeholder="Contoh: +62 812-3456-7890"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
               </div>
 
@@ -549,7 +549,7 @@ export default function AdminDashboard({
                   value={formData.kosInfo.startingPrice}
                   onChange={(e) => handleInfoChange('startingPrice', e.target.value)}
                   placeholder="Contoh: Rp 1.500.000"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
               </div>
 
@@ -560,7 +560,7 @@ export default function AdminDashboard({
                   value={formData.kosInfo.instagram}
                   onChange={(e) => handleInfoChange('instagram', e.target.value)}
                   placeholder="Contoh: @grahaasri.kost"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
               </div>
 
@@ -570,7 +570,7 @@ export default function AdminDashboard({
                   type="text"
                   value={formData.kosInfo.tagline}
                   onChange={(e) => handleInfoChange('tagline', e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
               </div>
 
@@ -580,7 +580,7 @@ export default function AdminDashboard({
                   rows="3"
                   value={formData.kosInfo.subTagline}
                   onChange={(e) => handleInfoChange('subTagline', e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
               </div>
 
@@ -590,7 +590,7 @@ export default function AdminDashboard({
                   rows="2"
                   value={formData.kosInfo.address}
                   onChange={(e) => handleInfoChange('address', e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
               </div>
 
@@ -600,7 +600,7 @@ export default function AdminDashboard({
                   type="text"
                   value={formData.kosInfo.locationNote}
                   onChange={(e) => handleInfoChange('locationNote', e.target.value)}
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                 />
               </div>
             </div>
@@ -657,7 +657,7 @@ export default function AdminDashboard({
                         value={stat.value || ''}
                         onChange={(e) => handleStatChange(idx, 'value', e.target.value)}
                         placeholder="Contoh: Aman & Nyaman / 24 Jam / 100 Mbps"
-                        className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-sm font-bold text-slate-900 bg-white"
+                        className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-sm font-bold text-slate-900 bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
 
@@ -670,7 +670,7 @@ export default function AdminDashboard({
                         value={stat.label || ''}
                         onChange={(e) => handleStatChange(idx, 'label', e.target.value)}
                         placeholder="Contoh: Lingkungan / Keamanan / Kecepatan WiFi"
-                        className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 bg-white"
+                        className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
 
@@ -683,7 +683,7 @@ export default function AdminDashboard({
                         value={stat.sub || ''}
                         onChange={(e) => handleStatChange(idx, 'sub', e.target.value)}
                         placeholder="Contoh: Kondusif untuk Istirahat & Belajar"
-                        className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-500 bg-white"
+                        className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-500 bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
                   </div>
@@ -739,10 +739,10 @@ export default function AdminDashboard({
                         <select
                           value={room.isAvailable ? 'tersedia' : 'penuh'}
                           onChange={(e) => handleStatusChange(idx, e.target.value)}
-                          className={`appearance-none text-xs font-bold pl-3.5 pr-8 py-2 rounded-xl cursor-pointer transition-colors shadow-sm focus:outline-none ${
+                          className={`appearance-none text-xs font-bold pl-3.5 pr-8 py-2 rounded-xl cursor-pointer transition-all shadow-sm no-focus-theme focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                             room.isAvailable
-                              ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
-                              : 'bg-red-600 hover:bg-red-700 text-white'
+                              ? 'bg-emerald-600 hover:bg-emerald-700 text-white focus:ring-emerald-500'
+                              : 'bg-red-600 hover:bg-red-700 text-white focus:ring-red-500'
                           }`}
                         >
                           <option value="tersedia" className="bg-white text-slate-900 font-semibold">
@@ -776,7 +776,7 @@ export default function AdminDashboard({
                         type="text"
                         value={room.name}
                         onChange={(e) => handleRoomChange(idx, 'name', e.target.value)}
-                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
 
@@ -786,7 +786,7 @@ export default function AdminDashboard({
                         type="number"
                         value={room.price}
                         onChange={(e) => handleRoomChange(idx, 'price', Number(e.target.value))}
-                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
 
@@ -796,7 +796,7 @@ export default function AdminDashboard({
                         type="number"
                         value={room.available}
                         onChange={(e) => handleRoomChange(idx, 'available', Number(e.target.value))}
-                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
 
@@ -807,7 +807,7 @@ export default function AdminDashboard({
                         value={room.size}
                         onChange={(e) => handleRoomChange(idx, 'size', e.target.value)}
                         placeholder="Contoh: 3 x 4 Meter"
-                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
 
@@ -818,7 +818,7 @@ export default function AdminDashboard({
                         value={room.tag || ''}
                         onChange={(e) => handleRoomChange(idx, 'tag', e.target.value)}
                         placeholder="Contoh: Paling Populer / Hemat"
-                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
 
@@ -829,7 +829,7 @@ export default function AdminDashboard({
                         value={room.originalPrice || ''}
                         onChange={(e) => handleRoomChange(idx, 'originalPrice', e.target.value ? Number(e.target.value) : null)}
                         placeholder="Kosongkan jika tidak promo"
-                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
 
@@ -880,7 +880,7 @@ export default function AdminDashboard({
                             value={room.image || ''}
                             onChange={(e) => handleRoomChange(idx, 'image', e.target.value)}
                             placeholder="Atau masukkan URL foto langsung"
-                            className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-600 bg-white"
+                            className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-600 bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                           />
                         </div>
                       </div>
@@ -899,7 +899,7 @@ export default function AdminDashboard({
                           handleRoomChange(idx, 'facilities', facs);
                         }}
                         placeholder="AC 0.5 PK Hemat Energi&#10;Kasur Single Springbed (100x200)&#10;Kamar Mandi Luar (Bersih & Terawat)&#10;Lemari Pakaian 2 Pintu&#10;Meja Belajar / Kerja + Kursi Ergonomis"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm leading-relaxed"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm leading-relaxed focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                       <span className="text-[11px] text-slate-400">Setiap baris baru akan otomatis menjadi poin fasilitas bercentang di popup kamar</span>
                     </div>
@@ -917,7 +917,7 @@ export default function AdminDashboard({
                           handleRoomChange(idx, 'inclusions', incs);
                         }}
                         placeholder="Termasuk Air Bersih&#10;Termasuk Iuran Sampah & Kebersihan&#10;Listrik Token Mandiri (900 VA)"
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm leading-relaxed"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm leading-relaxed focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                       <span className="text-[11px] text-slate-400">Setiap baris baru akan muncul di kotak 'Biaya Lain & Ketentuan' di popup kamar</span>
                     </div>
@@ -928,7 +928,7 @@ export default function AdminDashboard({
                         rows="2"
                         value={room.description || ''}
                         onChange={(e) => handleRoomChange(idx, 'description', e.target.value)}
-                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
+                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                       />
                     </div>
                   </div>
@@ -1021,7 +1021,7 @@ export default function AdminDashboard({
                       value={fac.title || ''}
                       onChange={(e) => handleFacilityChange(facilityCategory, idx, 'title', e.target.value)}
                       placeholder="Contoh: WiFi Cepat 100 Mbps"
-                      className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm font-semibold"
+                      className="w-full px-3 py-2 rounded-xl border border-slate-200 text-sm font-semibold focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                     />
                   </div>
 
@@ -1032,7 +1032,7 @@ export default function AdminDashboard({
                     <select
                       value={fac.icon || 'Sparkles'}
                       onChange={(e) => handleFacilityChange(facilityCategory, idx, 'icon', e.target.value)}
-                      className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-medium bg-white"
+                      className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-medium bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                     >
                       {ICON_OPTIONS.map((opt) => (
                         <option key={opt.value} value={opt.value}>
@@ -1051,7 +1051,7 @@ export default function AdminDashboard({
                       value={fac.desc || ''}
                       onChange={(e) => handleFacilityChange(facilityCategory, idx, 'desc', e.target.value)}
                       placeholder="Jelaskan fasilitas ini..."
-                      className="w-full px-3 py-1.5 rounded-xl border border-slate-200 text-xs text-slate-600 leading-relaxed"
+                      className="w-full px-3 py-1.5 rounded-xl border border-slate-200 text-xs text-slate-600 leading-relaxed focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                     />
                   </div>
                 </div>
@@ -1078,7 +1078,7 @@ export default function AdminDashboard({
                       setFormData({ ...formData, faqs: updatedFaqs });
                     }}
                     placeholder="Pertanyaan"
-                    className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-sm font-semibold bg-white"
+                    className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-sm font-semibold bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                   />
                   <textarea
                     rows="2"
@@ -1089,7 +1089,7 @@ export default function AdminDashboard({
                       setFormData({ ...formData, faqs: updatedFaqs });
                     }}
                     placeholder="Jawaban"
-                    className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs sm:text-sm bg-white"
+                    className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs sm:text-sm bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
                   />
                 </div>
               ))}

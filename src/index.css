@@ -13,6 +13,25 @@
     padding: 0;
     -webkit-font-smoothing: antialiased;
   }
+
+  /* Hilangkan garis focus hitam default browser dan samakan ke tema emerald */
+  input,
+  textarea,
+  select {
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus-visible,
+  textarea:focus,
+  textarea:focus-visible,
+  select:not(.no-focus-theme):focus,
+  select:not(.no-focus-theme):focus-visible {
+    outline: 2px solid transparent !important;
+    outline-offset: 2px !important;
+    border-color: #10b981 !important; /* emerald-500 */
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25) !important;
+  }
 }
 
 /* Custom scrollbar */
