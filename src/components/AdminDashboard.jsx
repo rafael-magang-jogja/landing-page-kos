@@ -15,13 +15,15 @@ import {
 
 const ADMIN_PIN = 'admin123'; // Default PIN
 
-export default function AdminDashboard({ data, onSave, onReset, onBackToLanding }) {
+export default function AdminDashboard({ data, isSupabaseConnected, onSave, onReset, onBackToLanding }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [pinInput, setPinInput] = useState('');
   const [pinError, setPinError] = useState('');
   const [activeTab, setActiveTab] = useState('info');
   const [copied, setCopied] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [saveAlert, setSaveAlert] = useState(false);
+  const [saveMessage, setSaveMessage] = useState('');
 
   // Local state copy of kos data
   const [formData, setFormData] = useState(JSON.parse(JSON.stringify(data)));
@@ -76,10 +78,22 @@ export default function AdminDashboard({ data, onSave, onReset, onBackToLanding 
     });
   };
 
-  const handleSaveToBrowser = () => {
-    onSave(formData);
+  const handleSaveToBrowser = async () => {
+    setIsSaving(true);
+    const res = await onSave(formData);
+    setIsSaving(false);
+
+    if (res?.success) {
+      setSaveMessage(
+        isSupabaseConnected
+          ? 'Data berhasil disimpan langsung ke Database Supabase!'
+          : 'Data berhasil diterapkan ke browser!'
+      );
+    } else {
+      setSaveMessage('Gagal menyimpan ke Supabase: ' + (res?.error || 'Unknown error'));
+    }
     setSaveAlert(true);
-    setTimeout(() => setSaveAlert(false), 3000);
+    setTimeout(() => setSaveAlert(false), 3500);
   };
 
   const handleDownloadJSON = () => {
@@ -162,7 +176,20 @@ export default function AdminDashboard({ data, onSave, onReset, onBackToLanding 
             </button>
             <div>
               <h1 className="text-lg font-bold text-slate-900">Panel Pengelola Kos</h1>
-              <span className="text-xs text-emerald-600 font-medium">Mode Editor Visual</span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-slate-500">Mode Editor</span>
+                <span>•</span>
+                {isSupabaseConnected ? (
+                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                    Supabase Database Aktif
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full">
+                    Mode Lokal / JSON
+                  </span>
+                )}
+              </div>
             </div>
           </div>
 
@@ -170,10 +197,11 @@ export default function AdminDashboard({ data, onSave, onReset, onBackToLanding 
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={handleSaveToBrowser}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold shadow-md shadow-emerald-600/20 transition-all"
+              disabled={isSaving}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold shadow-md shadow-emerald-600/20 transition-all disabled:opacity-50"
             >
               <Save className="w-4 h-4" />
-              <span>Terapkan Perubahan</span>
+              <span>{isSaving ? 'Menyimpan...' : isSupabaseConnected ? 'Simpan ke Supabase' : 'Terapkan Perubahan'}</span>
             </button>
 
             <button
@@ -233,7 +261,7 @@ export default function AdminDashboard({ data, onSave, onReset, onBackToLanding 
       {saveAlert && (
         <div className="fixed top-20 right-6 z-50 bg-emerald-600 text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-2 animate-in fade-in slide-in-from-top-2">
           <Check className="w-5 h-5" />
-          <span className="text-sm font-bold">Perubahan berhasil diterapkan ke tampilan website!</span>
+          <span className="text-sm font-bold">{saveMessage || 'Perubahan berhasil diterapkan ke tampilan website!'}</span>
         </div>
       )}
 
