@@ -16,6 +16,7 @@ import {
   Upload,
   Image,
   Sparkles,
+  ChevronDown,
 } from 'lucide-react';
 import { uploadKosImage } from '../lib/supabase';
 
@@ -86,10 +87,16 @@ export default function AdminDashboard({
   const handleRoomChange = (index, field, value) => {
     setFormData((prev) => {
       const updatedRooms = [...prev.roomTypes];
-      updatedRooms[index] = {
+      const updatedRoom = {
         ...updatedRooms[index],
         [field]: value,
       };
+      if (field === 'available') {
+        const num = Number(value);
+        updatedRoom.available = num;
+        updatedRoom.isAvailable = num > 0;
+      }
+      updatedRooms[index] = updatedRoom;
       return {
         ...prev,
         roomTypes: updatedRooms,
@@ -97,14 +104,14 @@ export default function AdminDashboard({
     });
   };
 
-  const handleRoomAvailabilityToggle = (index) => {
+  const handleStatusChange = (index, status) => {
     setFormData((prev) => {
       const updatedRooms = [...prev.roomTypes];
-      const current = updatedRooms[index].isAvailable;
+      const isAvailable = status === 'tersedia';
       updatedRooms[index] = {
         ...updatedRooms[index],
-        isAvailable: !current,
-        available: !current ? 1 : 0,
+        isAvailable,
+        available: isAvailable ? (updatedRooms[index].available > 0 ? updatedRooms[index].available : 1) : 0,
       };
       return {
         ...prev,
@@ -725,24 +732,30 @@ export default function AdminDashboard({
                       </div>
                     </div>
 
-                    {/* Status & Delete Actions */}
+                    {/* Status Toggle Dropdown & Delete Action */}
                     <div className="flex items-center gap-3">
-                      <span className={`text-xs font-bold px-3 py-1 rounded-full ${
-                        room.isAvailable ? 'bg-emerald-100 text-emerald-800' : 'bg-red-100 text-red-800'
-                      }`}>
-                        {room.isAvailable ? `Tersedia (${room.available} Kamar)` : 'Penuh'}
-                      </span>
-
-                      <button
-                        onClick={() => handleRoomAvailabilityToggle(idx)}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-semibold border transition-colors ${
-                          room.isAvailable
-                            ? 'bg-red-50 text-red-700 border-red-200 hover:bg-red-100'
-                            : 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100'
-                        }`}
-                      >
-                        {room.isAvailable ? 'Set ke Penuh' : 'Set ke Tersedia'}
-                      </button>
+                      {/* Toggle Dropdown with Solid Background */}
+                      <div className="relative">
+                        <select
+                          value={room.isAvailable ? 'tersedia' : 'penuh'}
+                          onChange={(e) => handleStatusChange(idx, e.target.value)}
+                          className={`appearance-none text-xs font-bold pl-3.5 pr-8 py-2 rounded-xl cursor-pointer transition-colors shadow-sm focus:outline-none ${
+                            room.isAvailable
+                              ? 'bg-emerald-600 hover:bg-emerald-700 text-white'
+                              : 'bg-red-600 hover:bg-red-700 text-white'
+                          }`}
+                        >
+                          <option value="tersedia" className="bg-white text-slate-900 font-semibold">
+                            Tersedia ({room.available > 0 ? room.available : 1} Kamar)
+                          </option>
+                          <option value="penuh" className="bg-white text-slate-900 font-semibold">
+                            Penuh
+                          </option>
+                        </select>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2.5 text-white">
+                          <ChevronDown className="w-3.5 h-3.5" />
+                        </div>
+                      </div>
 
                       {formData.roomTypes.length > 1 && (
                         <button
