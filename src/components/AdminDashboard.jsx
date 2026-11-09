@@ -670,21 +670,40 @@ export default function AdminDashboard({
                       </div>
                     </div>
 
-                    {/* Facilities List (Comma separated) */}
+                    {/* Facilities List */}
                     <div className="md:col-span-3">
                       <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                        Fasilitas Kamar (Pisahkan dengan tanda koma)
+                        Fasilitas di Dalam Kamar (Tulis 1 fasilitas per baris)
                       </label>
-                      <input
-                        type="text"
-                        value={Array.isArray(room.facilities) ? room.facilities.join(', ') : ''}
+                      <textarea
+                        rows="4"
+                        value={Array.isArray(room.facilities) ? room.facilities.join('\n') : ''}
                         onChange={(e) => {
-                          const facs = e.target.value.split(',').map((s) => s.trim()).filter(Boolean);
+                          const facs = e.target.value.split('\n').filter((s) => s.trim() !== '');
                           handleRoomChange(idx, 'facilities', facs);
                         }}
-                        placeholder="Contoh: AC Dingin, Kasur Queen, Kamar Mandi Dalam, Smart TV"
-                        className="w-full px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
+                        placeholder="AC 0.5 PK Hemat Energi&#10;Kasur Single Springbed (100x200)&#10;Kamar Mandi Luar (Bersih & Terawat)&#10;Lemari Pakaian 2 Pintu&#10;Meja Belajar / Kerja + Kursi Ergonomis"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm leading-relaxed"
                       />
+                      <span className="text-[11px] text-slate-400">Setiap baris baru akan otomatis menjadi poin fasilitas bercentang di popup kamar</span>
+                    </div>
+
+                    {/* Inclusions List (Biaya Lain & Ketentuan) */}
+                    <div className="md:col-span-3">
+                      <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
+                        Biaya Lain & Ketentuan (Tulis 1 ketentuan per baris)
+                      </label>
+                      <textarea
+                        rows="3"
+                        value={Array.isArray(room.inclusions) ? room.inclusions.join('\n') : ''}
+                        onChange={(e) => {
+                          const incs = e.target.value.split('\n').filter((s) => s.trim() !== '');
+                          handleRoomChange(idx, 'inclusions', incs);
+                        }}
+                        placeholder="Termasuk Air Bersih&#10;Termasuk Iuran Sampah & Kebersihan&#10;Listrik Token Mandiri (900 VA)"
+                        className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm leading-relaxed"
+                      />
+                      <span className="text-[11px] text-slate-400">Setiap baris baru akan muncul di kotak 'Biaya Lain & Ketentuan' di popup kamar</span>
                     </div>
 
                     <div className="md:col-span-3">
