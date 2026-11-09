@@ -2,7 +2,6 @@
   "kosInfo": {
     "name": "Kost Graha Asri",
     "badge": "Eksklusif & Nyaman",
-    "type": "Kost Campur (Karyawan & Mahasiswa)",
     "tagline": "Hunian Kost Modern, Nyaman, Bersih & Berlokasi Sangat Strategis",
     "subTagline": "Nikmati kenyamanan beristirahat seperti di rumah sendiri dengan fasilitas kamar lengkap, internet berkecepatan tinggi, keamanan 24 jam, dan lingkungan yang kondusif.",
     "address": "Jl. Melati No. 45, Kebayoran Baru, Jakarta Selatan, DKI Jakarta 12150",
@@ -13,13 +12,11 @@
     "email": "halo@grahaasrikost.id",
     "operatingHours": "Setiap Hari (08:00 - 20:00 WIB)",
     "startingPrice": "Rp 1.500.000",
-    "promoBadge": "Diskon 10% untuk Bayar 6 Bulan!",
     "googleMapsEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2974797034177!2d106.80026337586828!3d-6.224446460959149!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14d30079f01%3A0x2e74f4f3460662d2!2sSenayan%20City!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid",
     "googleMapsDirectionUrl": "https://maps.google.com"
   },
   "stats": [
     { "label": "Lingkungan", "value": "Aman & Nyaman", "sub": "Kondusif untuk Istirahat & Belajar" },
-    { "label": "Kamar Tersedia", "value": "3 Kamar", "sub": "Update Minggu Ini" },
     { "label": "Keamanan", "value": "24 Jam", "sub": "CCTV & Smart Digital Lock" },
     { "label": "Kecepatan WiFi", "value": "100 Mbps", "sub": "Fiber Optic Dedicated" }
   ],
@@ -136,38 +133,6 @@
       { "title": "Bebas Jam Malam", "desc": "Penghuni leluasa beraktivitas dengan tetap menjaga ketertiban bersama.", "icon": "Clock" }
     ]
   },
-  "gallery": [
-    {
-      "title": "Kamar Tidur Utama",
-      "category": "Kamar",
-      "image": "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      "title": "Kamar Deluxe Modern",
-      "category": "Kamar",
-      "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      "title": "Kamar Mandi Dalam Bersih",
-      "category": "Kamar Mandi",
-      "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      "title": "Dapur Bersama Lengkap",
-      "category": "Fasilitas",
-      "image": "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      "title": "Ruang Santai & Meja Diskusi",
-      "category": "Fasilitas",
-      "image": "https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      "title": "Fasad Bangunan & Parkiran Bersih",
-      "category": "Eksterior",
-      "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
-    }
-  ],
   "nearbyPlaces": [
     { "category": "Pendidikan", "name": "Universitas / Kampus Utama", "time": "5 Menit", "distance": "800 m" },
     { "category": "Transportasi", "name": "Stasiun KRL / MRT Terdekat", "time": "7 Menit", "distance": "1.2 km" },
@@ -175,40 +140,6 @@
     { "category": "Kuliner", "name": "Pusat Jajanan & Kafe Hits", "time": "3 Menit", "distance": "300 m" },
     { "category": "Kesehatan", "name": "Rumah Sakit Umum / Apotek", "time": "8 Menit", "distance": "1.5 km" },
     { "category": "Mall", "name": "Pusat Perbelanjaan / Mall", "time": "10 Menit", "distance": "2.5 km" }
-  ],
-  "rules": [
-    { "rule": "Wajib menjaga ketenangan setelah pukul 22:00 WIB demi kenyamanan istirahat bersama." },
-    { "rule": "Tamu lawan jenis dilarang masuk ke dalam kamar tidur penghuni (tersedia ruang tamu bersama di lantai 1)." },
-    { "rule": "Dilarang keras merokok / vape di dalam kamar ber-AC (merokok di area terbuka/rooftop yang disediakan)." },
-    { "rule": "Dilarang membawa hewan peliharaan demi kebersihan dan higienitas lingkungan." },
-    { "rule": "Wajib mengunci pintu gerbang dan kamar saat bepergian, serta mematikan AC saat kamar kosong." },
-    { "rule": "Dilarang membawa, mengonsumsi, atau menyimpan miras dan obat-obatan terlarang." }
-  ],
-  "testimonials": [
-    {
-      "name": "Bagas Pratama",
-      "role": "Software Engineer di SCBD",
-      "duration": "Tinggal 1.5 Tahun",
-      "rating": 5,
-      "comment": "Lokasinya beneran strategis banget, cari makan gampang jalan kaki doang. WiFi-nya stabil buat WFH, dan pemilik kos sangat responsif kalau ada kendala fasilitas.",
-      "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      "name": "Dinda Safitri",
-      "role": "Mahasiswi Tingkat Akhir",
-      "duration": "Tinggal 10 Bulan",
-      "rating": 5,
-      "comment": "Suasana kosnya tenang banget buat belajar skripsi. Kamarnya bersih, sirkulasi udaranya adem, dan yang paling aku suka ada dispenser air RO gratis jadi hemat budget bulanan!",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
-    },
-    {
-      "name": "Rian Wicaksono",
-      "role": "Management Trainee Perbankan",
-      "duration": "Tinggal 2 Tahun",
-      "rating": 5,
-      "comment": "Keamanannya jempolan, pakai smart door lock jadi gak ribet bawa kunci konvensional banyak. Parkir motor juga luas dan aman ada CCTV 24 jam.",
-      "avatar": "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=150&q=80"
-    }
   ],
   "faqs": [
     {

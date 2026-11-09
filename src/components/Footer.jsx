@@ -25,12 +25,6 @@ export default function Footer({ kosInfo, onOpenAdmin }) {
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               {kosInfo.tagline}. Pilihan hunian kost terbaik untuk mahasiswa dan karyawan yang mengutamakan ketenangan, kebersihan, dan kenyamanan.
             </p>
-
-            <div className="pt-2">
-              <span className="inline-block px-3 py-1 rounded-lg text-xs font-semibold bg-emerald-950 text-emerald-400 border border-emerald-800/60">
-                {kosInfo.type}
-              </span>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -49,13 +43,7 @@ export default function Footer({ kosInfo, onOpenAdmin }) {
                 <a href="#fasilitas" className="hover:text-emerald-400 transition-colors">Fasilitas Lengkap</a>
               </li>
               <li>
-                <a href="#galeri" className="hover:text-emerald-400 transition-colors">Galeri Foto</a>
-              </li>
-              <li>
                 <a href="#lokasi" className="hover:text-emerald-400 transition-colors">Lokasi & Akses Sekitar</a>
-              </li>
-              <li>
-                <a href="#aturan" className="hover:text-emerald-400 transition-colors">Peraturan Kos</a>
               </li>
               <li>
                 <a href="#faq" className="hover:text-emerald-400 transition-colors">Tanya Jawab (FAQ)</a>

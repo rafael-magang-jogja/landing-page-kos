@@ -17,17 +17,6 @@ export default function Hero({ kosInfo, stats }) {
           {/* Left Column: Headline & CTA */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
-            {/* Badges */}
-            <div className="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
-                <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                {kosInfo.type}
-              </span>
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
-                🔥 {kosInfo.promoBadge}
-              </span>
-            </div>
-
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
               Hunian Kost Modern,{' '}
@@ -149,7 +138,7 @@ export default function Hero({ kosInfo, stats }) {
         </div>
 
         {/* Stats Row */}
-        <div className="mt-16 pt-10 border-t border-slate-200/80 grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="mt-16 pt-10 border-t border-slate-200/80 grid grid-cols-1 sm:grid-cols-3 gap-6">
           {stats.map((item, idx) => (
             <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow text-center">
               <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600 tracking-tight">

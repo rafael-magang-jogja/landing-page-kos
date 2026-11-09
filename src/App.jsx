@@ -4,10 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import RoomTypes from './components/RoomTypes';
 import Facilities from './components/Facilities';
-import Gallery from './components/Gallery';
 import LocationMap from './components/LocationMap';
-import Rules from './components/Rules';
-import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
@@ -96,10 +93,7 @@ export default function App() {
     stats,
     roomTypes,
     facilities,
-    gallery,
     nearbyPlaces,
-    rules,
-    testimonials,
     faqs,
   } = data;
 
@@ -113,10 +107,7 @@ export default function App() {
         <Hero kosInfo={kosInfo} stats={stats} />
         <RoomTypes roomTypes={roomTypes} kosInfo={kosInfo} />
         <Facilities facilities={facilities} />
-        <Gallery gallery={gallery} />
         <LocationMap kosInfo={kosInfo} nearbyPlaces={nearbyPlaces} />
-        <Rules rules={rules} />
-        <Testimonials testimonials={testimonials} />
         <FAQ faqs={faqs} kosInfo={kosInfo} />
         <CTASection kosInfo={kosInfo} />
       </main>

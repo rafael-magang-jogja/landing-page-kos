@@ -6,16 +6,11 @@ import {
   ArrowLeft,
   Check,
   Lock,
-  Plus,
-  Trash2,
   Eye,
   Settings,
   Bed,
-  Sparkles,
   HelpCircle,
-  ShieldAlert,
   RotateCcw,
-  ExternalLink,
 } from 'lucide-react';
 
 const ADMIN_PIN = 'admin123'; // Default PIN
@@ -114,7 +109,7 @@ export default function AdminDashboard({ data, onSave, onReset, onBackToLanding 
           </div>
           <h2 className="text-2xl font-bold text-slate-900">Panel Kelola Kos</h2>
           <p className="text-sm text-slate-500 mt-1 mb-6">
-            Masukkan PIN pengelola untuk mengedit teks, harga kamar, dan foto landing page.
+            Masukkan PIN pengelola untuk mengedit teks, harga kamar, dan status ketersediaan.
           </p>
 
           <form onSubmit={handleLogin} className="space-y-4">
@@ -213,7 +208,7 @@ export default function AdminDashboard({ data, onSave, onReset, onBackToLanding 
           {[
             { id: 'info', label: 'Profil & Kontak', icon: Settings },
             { id: 'kamar', label: 'Kelola Kamar', icon: Bed },
-            { id: 'aturan', label: 'Aturan & FAQ', icon: HelpCircle },
+            { id: 'faq', label: 'Tanya Jawab (FAQ)', icon: HelpCircle },
           ].map((tab) => {
             const Icon = tab.icon;
             return (
@@ -278,12 +273,12 @@ export default function AdminDashboard({ data, onSave, onReset, onBackToLanding 
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Tipe Kos</label>
+                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Badge Header</label>
                 <input
                   type="text"
-                  value={formData.kosInfo.type}
-                  onChange={(e) => handleInfoChange('type', e.target.value)}
-                  placeholder="Contoh: Kost Campur / Putra / Putri"
+                  value={formData.kosInfo.badge}
+                  onChange={(e) => handleInfoChange('badge', e.target.value)}
+                  placeholder="Contoh: Eksklusif & Nyaman"
                   className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
@@ -323,12 +318,12 @@ export default function AdminDashboard({ data, onSave, onReset, onBackToLanding 
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Promo Badge</label>
+                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">Instagram</label>
                 <input
                   type="text"
-                  value={formData.kosInfo.promoBadge}
-                  onChange={(e) => handleInfoChange('promoBadge', e.target.value)}
-                  placeholder="Contoh: Diskon 10% untuk Bayar 6 Bulan!"
+                  value={formData.kosInfo.instagram}
+                  onChange={(e) => handleInfoChange('instagram', e.target.value)}
+                  placeholder="Contoh: @grahaasri.kost"
                   className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                 />
               </div>
@@ -484,34 +479,9 @@ export default function AdminDashboard({ data, onSave, onReset, onBackToLanding 
           </div>
         )}
 
-        {/* TAB 3: ATURAN & FAQ */}
-        {activeTab === 'aturan' && (
+        {/* TAB 3: FAQ */}
+        {activeTab === 'faq' && (
           <div className="space-y-8">
-            {/* Rules list */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-4">
-              <h2 className="text-xl font-bold text-slate-900 border-b pb-4">
-                Tata Tertib & Peraturan Kos
-              </h2>
-              {formData.rules.map((ruleItem, idx) => (
-                <div key={idx} className="flex items-center gap-3">
-                  <span className="w-6 h-6 rounded-full bg-slate-100 text-xs font-bold flex items-center justify-center shrink-0">
-                    {idx + 1}
-                  </span>
-                  <input
-                    type="text"
-                    value={ruleItem.rule}
-                    onChange={(e) => {
-                      const updatedRules = [...formData.rules];
-                      updatedRules[idx].rule = e.target.value;
-                      setFormData({ ...formData, rules: updatedRules });
-                    }}
-                    className="flex-1 px-3.5 py-2 rounded-xl border border-slate-200 text-sm"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* FAQs */}
             <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80 space-y-4">
               <h2 className="text-xl font-bold text-slate-900 border-b pb-4">
                 Pertanyaan Umum (FAQ)
