@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Home, Menu, X, MessageCircle, Phone } from 'lucide-react';
+import { Home, Menu, X } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppLink } from '../utils/whatsapp';
 
 export default function Navbar({ kosInfo }) {
@@ -70,7 +71,7 @@ export default function Navbar({ kosInfo }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm shadow-md shadow-emerald-600/20 hover:shadow-emerald-600/30 transition-all hover:-translate-y-0.5 active:translate-y-0"
             >
-              <MessageCircle className="w-4 h-4 fill-white" />
+              <WhatsAppIcon className="w-4 h-4 text-white" />
               <span>Hubungi Pengelola</span>
             </a>
           </div>
@@ -108,7 +109,7 @@ export default function Navbar({ kosInfo }) {
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-600 text-white font-semibold shadow-md shadow-emerald-600/20"
                 >
-                  <MessageCircle className="w-5 h-5 fill-white" />
+                  <WhatsAppIcon className="w-5 h-5 text-white" />
                   <span>Chat WhatsApp Pemilik</span>
                 </a>
               </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppLink } from '../utils/whatsapp';
 
 export default function WhatsAppFloat({ kosInfo }) {
@@ -35,10 +36,10 @@ export default function WhatsAppFloat({ kosInfo }) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat WhatsApp Pemilik Kost"
-        className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/40 hover:shadow-emerald-500/60 hover:scale-105 active:scale-95 transition-all duration-300"
+        className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white shadow-lg shadow-[#25D366]/40 hover:shadow-[#25D366]/60 hover:scale-105 active:scale-95 transition-all duration-300"
       >
         <span className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-500 border-2 border-white rounded-full" />
-        <MessageCircle className="w-7 h-7 fill-white" />
+        <WhatsAppIcon className="w-7 h-7 text-white" />
       </a>
     </div>
   );

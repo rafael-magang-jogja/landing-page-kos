@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageCircle, ArrowRight, ShieldCheck, Wifi, Wind, MapPin, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Wifi, Wind, MapPin, CheckCircle2 } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppLink } from '../utils/whatsapp';
 
 export default function Hero({ kosInfo, stats }) {
@@ -52,7 +53,7 @@ export default function Hero({ kosInfo, stats }) {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 font-semibold text-base border border-slate-200 shadow-sm hover:border-slate-300 transition-all hover:-translate-y-0.5"
               >
-                <MessageCircle className="w-5 h-5 text-emerald-600" />
+                <WhatsAppIcon className="w-5 h-5 text-emerald-600" />
                 <span>Tanya via WhatsApp</span>
               </a>
             </div>

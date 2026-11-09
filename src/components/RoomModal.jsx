@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { X, Check, MessageCircle, Maximize2, Shield, Zap } from 'lucide-react';
+import { X, Check, Maximize2, Shield, Zap } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppLink, formatRupiah } from '../utils/whatsapp';
 
 export default function RoomModal({ room, kosInfo, onClose }) {
@@ -102,7 +103,7 @@ export default function RoomModal({ room, kosInfo, onClose }) {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow-lg shadow-emerald-600/25 transition-all hover:-translate-y-0.5"
             >
-              <MessageCircle className="w-5 h-5 fill-white" />
+              <WhatsAppIcon className="w-5 h-5 text-white" />
               <span>Pesan Kamar Ini via WA</span>
             </a>
           </div>

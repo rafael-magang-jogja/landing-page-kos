@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown, MessageCircle } from 'lucide-react';
+import { HelpCircle, ChevronDown } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppLink } from '../utils/whatsapp';
 
 export default function FAQ({ faqs, kosInfo }) {
@@ -77,7 +78,7 @@ export default function FAQ({ faqs, kosInfo }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-md shadow-emerald-600/20 shrink-0"
           >
-            <MessageCircle className="w-4 h-4 fill-white" />
+            <WhatsAppIcon className="w-4 h-4 text-white" />
             <span>Tanya Pengelola</span>
           </a>
         </div>

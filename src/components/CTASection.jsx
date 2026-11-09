@@ -1,5 +1,6 @@
 import React from 'react';
-import { MessageCircle, Calendar, Sparkles, MapPin } from 'lucide-react';
+import { Sparkles, MapPin } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppLink } from '../utils/whatsapp';
 
 export default function CTASection({ kosInfo }) {
@@ -37,7 +38,7 @@ export default function CTASection({ kosInfo }) {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-base shadow-xl shadow-emerald-500/30 transition-all hover:-translate-y-0.5"
               >
-                <Calendar className="w-5 h-5" />
+                <WhatsAppIcon className="w-5 h-5 text-white" />
                 <span>Jadwalkan Survey via WhatsApp</span>
               </a>
 

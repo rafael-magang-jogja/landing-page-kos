@@ -1,5 +1,6 @@
 import React from 'react';
-import { Home, Phone, Mail, Clock, MapPin, MessageCircle, Globe, Lock } from 'lucide-react';
+import { Home, Mail, Clock, MapPin, Globe, Lock } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppLink } from '../utils/whatsapp';
 
 export default function Footer({ kosInfo, onOpenAdmin }) {
@@ -59,7 +60,7 @@ export default function Footer({ kosInfo, onOpenAdmin }) {
                 <span className="leading-snug">{kosInfo.address}</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                <WhatsAppIcon className="w-4 h-4 text-emerald-400 shrink-0" />
                 <a
                   href={waUrl}
                   target="_blank"

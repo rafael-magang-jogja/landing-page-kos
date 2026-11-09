@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Check, MessageCircle, Eye, Maximize2, Sparkles, AlertCircle } from 'lucide-react';
+import { Check, Eye, Maximize2, Sparkles, AlertCircle } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 import { getWhatsAppLink, formatRupiah } from '../utils/whatsapp';
 import RoomModal from './RoomModal';
 
@@ -171,7 +172,7 @@ export default function RoomTypes({ roomTypes, kosInfo }) {
                           : 'bg-slate-600 hover:bg-slate-700'
                       }`}
                     >
-                      <MessageCircle className="w-4 h-4 fill-white" />
+                      <WhatsAppIcon className="w-4 h-4 text-white" />
                       <span>{room.isAvailable ? 'Pesan WA' : 'Tanya Antrean'}</span>
                     </a>
                   </div>
