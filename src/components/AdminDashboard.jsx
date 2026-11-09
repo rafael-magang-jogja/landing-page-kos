@@ -69,7 +69,7 @@ export default function AdminDashboard({
       setIsAuthenticated(true);
       setPinError('');
     } else {
-      setPinError('PIN salah! PIN default adalah: admin123');
+      setPinError('PIN salah! Silakan periksa kembali PIN Anda.');
     }
   };
 
@@ -319,7 +319,7 @@ export default function AdminDashboard({
             <div>
               <input
                 type="password"
-                placeholder="Masukkan PIN (Default: admin123)"
+                placeholder="Masukkan PIN Keamanan"
                 value={pinInput}
                 onChange={(e) => setPinInput(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl border border-slate-200 text-center text-lg tracking-widest focus:ring-2 focus:ring-emerald-500 focus:outline-none"
