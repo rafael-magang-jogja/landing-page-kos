@@ -28,9 +28,25 @@ Hanya jika Anda membutuhkan fitur transaksi rumit seperti payment gateway otomat
 - **Galeri Foto + Lightbox:** Dokumentasi foto kamar dan area bersama dengan filter kategori dan preview pembesar layar penuh (*lightbox*).
 - **Lokasi & Google Maps:** Integrasi peta interaktif Google Maps dan estimasi waktu tempuh ke kampus, stasiun KRL/MRT, minimarket, dan kuliner.
 - **Tata Tertib & Aturan Kos:** Transparansi aturan demi kenyamanan bersama.
-- **Testimoni Penghuni:** Ulasan penghuni sebelumnya dengan rating bintang 5.
+- **Cerita Penghuni:** Ulasan nyata pengalaman anak kos yang pernah tinggal.
 - **FAQ (Tanya Jawab Accordion):** Pertanyaan umum seputar deposit, listrik, booking, tamu menginap, dll.
 - **Floating WhatsApp Quick Chat:** Tombol mengambang di pojok kanan bawah dengan notifikasi live untuk memudahkan calon penghuni langsung menghubungi Anda.
+- **Panel Admin Visual Khusus (`/admin`):** Dilengkapi dashboard pengelola untuk mengedit teks, harga kamar, toggle status kamar kosong/penuh, dan download file JSON baru dengan PIN keamanan (`admin123`).
+
+---
+
+## 🔐 Cara Masuk ke Halaman Admin Pengelola Kos
+
+Halaman admin dapat diakses dengan cara:
+1. Akses URL: [http://localhost:5173/#admin](http://localhost:5173/#admin) (atau `/admin`).
+2. Atau scroll ke bagian paling bawah landing page (Footer), lalu klik tautan **"🔒 Kelola Kos (Admin)"**.
+3. Masukkan PIN keamanan: **`admin123`**.
+4. Di panel ini Anda bisa:
+   - Mengubah nama kos, nomor WhatsApp, alamat, dan promo.
+   - Mengubah status kamar (Tersedia / Penuh) dan harga sewa secara visual.
+   - Mengedit tata tertib aturan kos dan pertanyaan FAQ.
+   - Klik **"Terapkan Perubahan"** untuk melihat perubahan langsung di browser.
+   - Klik **"Download JSON"** jika ingin menyimpan file konfigurasi baru tersebut secara permanen ke project (`src/data/kosData.json`).
 
 ---
 
