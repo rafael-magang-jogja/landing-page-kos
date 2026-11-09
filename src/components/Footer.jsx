@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Phone, Mail, Clock, MapPin, MessageCircle, Globe } from 'lucide-react';
+import { Home, Phone, Mail, Clock, MapPin, MessageCircle, Globe, Lock } from 'lucide-react';
 import { getWhatsAppLink } from '../utils/whatsapp';
 
 export default function Footer({ kosInfo, onOpenAdmin }) {
@@ -94,9 +94,10 @@ export default function Footer({ kosInfo, onOpenAdmin }) {
           <div className="flex items-center gap-4">
             <button
               onClick={onOpenAdmin}
-              className="text-slate-600 hover:text-emerald-400 transition-colors flex items-center gap-1 font-medium"
+              className="text-slate-600 hover:text-emerald-400 transition-colors inline-flex items-center gap-1.5 font-medium"
             >
-              🔒 Kelola Kos (Admin)
+              <Lock className="w-3.5 h-3.5 text-slate-500" />
+              <span>Kelola Kos (Admin)</span>
             </button>
             <span>•</span>
             <p>Dibuat untuk kemudahan mencari hunian kost idaman.</p>

@@ -45,8 +45,9 @@ export default function LocationMap({ kosInfo, nearbyPlaces }) {
                   <p className="text-sm text-slate-600 mt-1 leading-relaxed">
                     {kosInfo.address}
                   </p>
-                  <p className="text-xs text-emerald-700 font-semibold mt-2">
-                    📍 {kosInfo.locationNote}
+                  <p className="text-xs text-emerald-700 font-semibold mt-2 flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                    <span>{kosInfo.locationNote}</span>
                   </p>
                 </div>
               </div>

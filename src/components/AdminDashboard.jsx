@@ -461,7 +461,11 @@ export default function AdminDashboard({
         {/* Info Note */}
         <div className="mb-6 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 text-xs sm:text-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div>
-            <strong>💡 Database Real-Time:</strong> Anda dapat menambah kamar baru, mengupload foto kamar langsung ke <strong>Supabase Storage</strong>, dan menyimpan perubahan harga secara real-time.
+            <span className="inline-flex items-center gap-1.5 font-bold mr-1">
+              <Sparkles className="w-4 h-4 text-emerald-600 shrink-0" />
+              Database Real-Time:
+            </span>
+            Anda dapat menambah kamar baru, mengupload foto kamar langsung ke <strong>Supabase Storage</strong>, dan menyimpan perubahan harga secara real-time.
           </div>
           <button
             onClick={onReset}
