@@ -227,6 +227,46 @@ export default function AdminDashboard({
     }
   };
 
+  // Stats handlers
+  const handleStatChange = (index, field, value) => {
+    setFormData((prev) => {
+      const updatedStats = [...(prev.stats || [])];
+      updatedStats[index] = {
+        ...updatedStats[index],
+        [field]: value,
+      };
+      return {
+        ...prev,
+        stats: updatedStats,
+      };
+    });
+  };
+
+  const handleAddStat = () => {
+    const newStat = {
+      value: 'Keunggulan Baru',
+      label: 'Kategori',
+      sub: 'Keterangan keunggulan kos',
+    };
+    setFormData((prev) => ({
+      ...prev,
+      stats: [...(prev.stats || []), newStat],
+    }));
+  };
+
+  const handleDeleteStat = (index) => {
+    if (window.confirm('Apakah Anda yakin ingin menghapus kartu keunggulan ini?')) {
+      setFormData((prev) => {
+        const updatedStats = [...(prev.stats || [])];
+        updatedStats.splice(index, 1);
+        return {
+          ...prev,
+          stats: updatedStats,
+        };
+      });
+    }
+  };
+
   const handleSaveToBrowser = async () => {
     setIsSaving(true);
     const res = await onSave(formData);
@@ -551,6 +591,92 @@ export default function AdminDashboard({
                   onChange={(e) => handleInfoChange('locationNote', e.target.value)}
                   className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"
                 />
+              </div>
+            </div>
+
+            {/* KARTU KEUNGGULAN / STATISTIK */}
+            <div className="pt-6 border-t border-slate-200 space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <h3 className="text-base font-bold text-slate-900">
+                    Kartu Keunggulan / Statistik (Tampil di Bawah Header)
+                  </h3>
+                  <p className="text-xs text-slate-500">
+                    Atur poin keunggulan utama yang tampil di bawah header (contoh: Aman & Nyaman, Keamanan 24 Jam, WiFi 100 Mbps)
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  onClick={handleAddStat}
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-bold border border-emerald-200 transition-all shrink-0"
+                >
+                  <Plus className="w-3.5 h-3.5" />
+                  <span>Tambah Kartu</span>
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {(formData.stats || []).map((stat, idx) => (
+                  <div
+                    key={idx}
+                    className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 relative group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">
+                        Kartu #{idx + 1}
+                      </span>
+                      {(formData.stats || []).length > 1 && (
+                        <button
+                          type="button"
+                          onClick={() => handleDeleteStat(idx)}
+                          className="p-1 rounded-lg text-slate-400 hover:text-red-600 hover:bg-red-50 transition-colors"
+                          title="Hapus Kartu Ini"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      )}
+                    </div>
+
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-600 uppercase mb-1">
+                        Teks Utama / Nilai
+                      </label>
+                      <input
+                        type="text"
+                        value={stat.value || ''}
+                        onChange={(e) => handleStatChange(idx, 'value', e.target.value)}
+                        placeholder="Contoh: Aman & Nyaman / 24 Jam / 100 Mbps"
+                        className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-sm font-bold text-slate-900 bg-white"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-600 uppercase mb-1">
+                        Label Kategori
+                      </label>
+                      <input
+                        type="text"
+                        value={stat.label || ''}
+                        onChange={(e) => handleStatChange(idx, 'label', e.target.value)}
+                        placeholder="Contoh: Lingkungan / Keamanan / Kecepatan WiFi"
+                        className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs font-semibold text-slate-700 bg-white"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-600 uppercase mb-1">
+                        Keterangan Tambahan
+                      </label>
+                      <input
+                        type="text"
+                        value={stat.sub || ''}
+                        onChange={(e) => handleStatChange(idx, 'sub', e.target.value)}
+                        placeholder="Contoh: Kondusif untuk Istirahat & Belajar"
+                        className="w-full px-3 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-500 bg-white"
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

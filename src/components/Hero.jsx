@@ -138,21 +138,23 @@ export default function Hero({ kosInfo, stats }) {
         </div>
 
         {/* Stats Row */}
-        <div className="mt-16 pt-10 border-t border-slate-200/80 grid grid-cols-1 sm:grid-cols-3 gap-6">
-          {stats.map((item, idx) => (
-            <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow text-center">
-              <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600 tracking-tight">
-                {item.value}
+        {stats && stats.length > 0 && (
+          <div className="mt-16 pt-10 border-t border-slate-200/80 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {stats.map((item, idx) => (
+              <div key={idx} className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow text-center">
+                <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600 tracking-tight">
+                  {item.value}
+                </div>
+                <div className="text-sm font-semibold text-slate-800 mt-1">
+                  {item.label}
+                </div>
+                <div className="text-xs text-slate-500 mt-0.5">
+                  {item.sub}
+                </div>
               </div>
-              <div className="text-sm font-semibold text-slate-800 mt-1">
-                {item.label}
-              </div>
-              <div className="text-xs text-slate-500 mt-0.5">
-                {item.sub}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
       </div>
     </section>
