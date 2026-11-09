@@ -2,7 +2,7 @@ import React from 'react';
 import { Home, Phone, Mail, Clock, MapPin, MessageCircle, Globe } from 'lucide-react';
 import { getWhatsAppLink } from '../utils/whatsapp';
 
-export default function Footer({ kosInfo }) {
+export default function Footer({ kosInfo, onOpenAdmin }) {
   const waUrl = getWhatsAppLink(kosInfo.whatsappNumber, `Halo ${kosInfo.name}, saya ingin bertanya tentang kost...`);
 
   return (
@@ -106,9 +106,16 @@ export default function Footer({ kosInfo }) {
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} {kosInfo.name}. Seluruh Hak Cipta Dilindungi.</p>
-          <p className="flex items-center gap-1">
-            Dibuat untuk kemudahan mencari hunian kost idaman.
-          </p>
+          <div className="flex items-center gap-4">
+            <button
+              onClick={onOpenAdmin}
+              className="text-slate-600 hover:text-emerald-400 transition-colors flex items-center gap-1 font-medium"
+            >
+              🔒 Kelola Kos (Admin)
+            </button>
+            <span>•</span>
+            <p>Dibuat untuk kemudahan mencari hunian kost idaman.</p>
+          </div>
         </div>
 
       </div>

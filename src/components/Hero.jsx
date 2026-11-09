@@ -121,14 +121,14 @@ export default function Hero({ kosInfo, stats }) {
                 </div>
               </div>
 
-              {/* Floating review highlight badge */}
-              <div className="absolute -top-4 -left-4 sm:-left-6 p-3 sm:p-4 rounded-2xl bg-white shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce-slow">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold text-lg">
-                  ★
+              {/* Floating highlight badge */}
+              <div className="absolute -top-4 -left-4 sm:-left-6 p-3 sm:p-4 rounded-2xl bg-white shadow-xl border border-slate-100 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold">
+                  <CheckCircle2 className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-slate-900">4.9 / 5.0 Rating</div>
-                  <div className="text-xs text-slate-500">Hunian Paling Nyaman</div>
+                  <div className="text-sm font-bold text-slate-900">Siap Huni</div>
+                  <div className="text-xs text-slate-500">Tinggal Bawa Pakaian</div>
                 </div>
               </div>
 

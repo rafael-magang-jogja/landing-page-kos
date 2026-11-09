@@ -18,7 +18,7 @@
     "googleMapsDirectionUrl": "https://maps.google.com"
   },
   "stats": [
-    { "label": "Tingkat Kepuasan", "value": "4.9 / 5.0", "sub": "Dari 50+ Ulasan Penghuni" },
+    { "label": "Lingkungan", "value": "Aman & Nyaman", "sub": "Kondusif untuk Istirahat & Belajar" },
     { "label": "Kamar Tersedia", "value": "3 Kamar", "sub": "Update Minggu Ini" },
     { "label": "Keamanan", "value": "24 Jam", "sub": "CCTV & Smart Digital Lock" },
     { "label": "Kecepatan WiFi", "value": "100 Mbps", "sub": "Fiber Optic Dedicated" }

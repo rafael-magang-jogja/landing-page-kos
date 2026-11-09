@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, MessageSquareQuote } from 'lucide-react';
+import { MessageSquareQuote, Quote } from 'lucide-react';
 
 export default function Testimonials({ testimonials }) {
   return (
@@ -28,11 +28,9 @@ export default function Testimonials({ testimonials }) {
               className="bg-slate-50 p-6 sm:p-7 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between hover:border-emerald-200 hover:shadow-lg transition-all"
             >
               <div>
-                {/* 5 Stars */}
-                <div className="flex gap-1 mb-4 text-amber-500">
-                  {[...Array(item.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                  ))}
+                {/* Quote Icon */}
+                <div className="w-9 h-9 rounded-xl bg-emerald-100/80 text-emerald-700 flex items-center justify-center mb-4">
+                  <Quote className="w-4 h-4 fill-emerald-600 text-emerald-600" />
                 </div>
 
                 {/* Comment quote */}
