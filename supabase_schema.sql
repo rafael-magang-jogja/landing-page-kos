@@ -207,3 +207,37 @@ values (
   }'::jsonb
 )
 on conflict (id) do nothing;
+
+-- ==============================================================================
+-- 6. SETUP SUPABASE STORAGE BUCKET UNTUK MENYIMPAN GAMBAR KOS ('kos-images')
+-- ==============================================================================
+
+-- Buat bucket 'kos-images' dengan akses publik
+insert into storage.buckets (id, name, public)
+values ('kos-images', 'kos-images', true)
+on conflict (id) do update set public = true;
+
+-- Policy agar publik bisa melihat gambar yang di-upload
+drop policy if exists "Public Access for kos-images" on storage.objects;
+create policy "Public Access for kos-images"
+  on storage.objects for select
+  using (bucket_id = 'kos-images');
+
+-- Policy agar admin bisa meng-upload gambar baru
+drop policy if exists "Allow upload to kos-images" on storage.objects;
+create policy "Allow upload to kos-images"
+  on storage.objects for insert
+  with check (bucket_id = 'kos-images');
+
+-- Policy agar admin bisa memperbarui gambar
+drop policy if exists "Allow update kos-images" on storage.objects;
+create policy "Allow update kos-images"
+  on storage.objects for update
+  using (bucket_id = 'kos-images');
+
+-- Policy agar admin bisa menghapus gambar
+drop policy if exists "Allow delete kos-images" on storage.objects;
+create policy "Allow delete kos-images"
+  on storage.objects for delete
+  using (bucket_id = 'kos-images');
+

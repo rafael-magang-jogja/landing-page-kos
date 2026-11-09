@@ -18,7 +18,6 @@ export default function Navbar({ kosInfo }) {
     { name: 'Beranda', href: '#beranda' },
     { name: 'Tipe Kamar', href: '#kamar' },
     { name: 'Fasilitas', href: '#fasilitas' },
-    { name: 'Lokasi', href: '#lokasi' },
     { name: 'FAQ', href: '#faq' },
   ];
 

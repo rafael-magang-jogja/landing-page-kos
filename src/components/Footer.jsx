@@ -43,9 +43,6 @@ export default function Footer({ kosInfo, onOpenAdmin }) {
                 <a href="#fasilitas" className="hover:text-emerald-400 transition-colors">Fasilitas Lengkap</a>
               </li>
               <li>
-                <a href="#lokasi" className="hover:text-emerald-400 transition-colors">Lokasi & Akses Sekitar</a>
-              </li>
-              <li>
                 <a href="#faq" className="hover:text-emerald-400 transition-colors">Tanya Jawab (FAQ)</a>
               </li>
             </ul>
