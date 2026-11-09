@@ -56,7 +56,9 @@ export default function RoomTypes({ roomTypes, kosInfo }) {
         {/* Room Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {displayedRooms.map((room) => {
-            const waBookingMessage = `Halo ${kosInfo.name}, saya berminat dengan ${room.name} (${formatRupiah(room.price)}/bln). Apakah kamar tersebut masih bisa dibooking?`;
+            const waBookingMessage = room.isAvailable
+              ? `Halo ${kosInfo.name}, saya berminat dengan ${room.name} (${formatRupiah(room.price)}/bln). Apakah kamar tersebut masih bisa dibooking?`
+              : `Halo ${kosInfo.name}, saya melihat ${room.name} sedang penuh. Apakah bisa info jika nanti ada kamar yang kosong?`;
             const waUrl = getWhatsAppLink(kosInfo.whatsappNumber, waBookingMessage);
 
             return (
@@ -69,8 +71,20 @@ export default function RoomTypes({ roomTypes, kosInfo }) {
                   <img
                     src={room.image}
                     alt={room.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className={`w-full h-full object-cover group-hover:scale-105 transition-all duration-500 ${
+                      !room.isAvailable ? 'grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100' : ''
+                    }`}
                   />
+
+                  {/* Dark Overlay + Single Black & White Center Badge when Full */}
+                  {!room.isAvailable && (
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center pointer-events-none">
+                      <span className="px-4 py-2 rounded-full text-xs sm:text-sm font-extrabold uppercase tracking-wider bg-slate-950 text-white shadow-xl ring-2 ring-white flex items-center gap-1.5">
+                        <AlertCircle className="w-4 h-4 stroke-[2.5]" />
+                        Kamar Penuh
+                      </span>
+                    </div>
+                  )}
                   
                   {/* Badge Tag */}
                   <div className="absolute top-3 left-3 flex gap-2">
@@ -79,20 +93,15 @@ export default function RoomTypes({ roomTypes, kosInfo }) {
                     </span>
                   </div>
 
-                  {/* Availability indicator */}
-                  <div className="absolute top-3 right-3">
-                    {room.isAvailable ? (
-                      <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/80 shadow-sm flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                  {/* Availability indicator (only shown when available) */}
+                  {room.isAvailable && (
+                    <div className="absolute top-3 right-3">
+                      <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 shadow-md ring-2 ring-white/80 flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
                         Sisa {room.available} Kamar
                       </span>
-                    ) : (
-                      <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700 border border-red-200 shadow-sm flex items-center gap-1">
-                        <AlertCircle className="w-3.5 h-3.5" />
-                        Penuh
-                      </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
 
                   {/* Size pill */}
                   <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-xs font-medium px-2.5 py-1 rounded-lg flex items-center gap-1">
@@ -111,7 +120,7 @@ export default function RoomTypes({ roomTypes, kosInfo }) {
 
                   {/* Price */}
                   <div className="mt-2 mb-4 pb-4 border-b border-slate-100 flex items-baseline gap-2">
-                    <span className="text-2xl font-extrabold text-slate-900">
+                    <span className={`text-2xl font-extrabold ${room.isAvailable ? 'text-slate-900' : 'text-slate-500'}`}>
                       {formatRupiah(room.price)}
                     </span>
                     <span className="text-xs text-slate-500 font-medium">/ {room.period}</span>
@@ -159,11 +168,11 @@ export default function RoomTypes({ roomTypes, kosInfo }) {
                       className={`inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl text-xs sm:text-sm font-semibold text-white transition-all shadow-sm ${
                         room.isAvailable
                           ? 'bg-emerald-600 hover:bg-emerald-700 shadow-emerald-600/20'
-                          : 'bg-slate-400 hover:bg-slate-500'
+                          : 'bg-slate-600 hover:bg-slate-700'
                       }`}
                     >
                       <MessageCircle className="w-4 h-4 fill-white" />
-                      <span>{room.isAvailable ? 'Pesan WA' : 'Tanya Info'}</span>
+                      <span>{room.isAvailable ? 'Pesan WA' : 'Tanya Antrean'}</span>
                     </a>
                   </div>
 

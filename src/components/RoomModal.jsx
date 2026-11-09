@@ -43,10 +43,10 @@ export default function RoomModal({ room, kosInfo, onClose }) {
             <span className="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-600 text-white shadow-md">
               {room.tag}
             </span>
-            <span className={`px-3 py-1 rounded-full text-xs font-semibold shadow-md ${
-              room.isAvailable ? 'bg-white text-emerald-800' : 'bg-red-500 text-white'
+            <span className={`px-3 py-1 rounded-full text-xs font-bold shadow-md ring-2 ring-white ${
+              room.isAvailable ? 'bg-white text-emerald-800' : 'bg-slate-950 text-white'
             }`}>
-              {room.isAvailable ? `Sisa ${room.available} Kamar` : 'Penuh'}
+              {room.isAvailable ? `Sisa ${room.available} Kamar` : 'KAMAR PENUH'}
             </span>
           </div>
 
