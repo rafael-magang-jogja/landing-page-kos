@@ -43,12 +43,12 @@ export default function Facilities({ facilities }) {
   const [activeTab, setActiveTab] = useState('kamar');
 
   const tabs = [
-    { id: 'kamar', label: 'Fasilitas Kamar', count: facilities.kamar.length },
-    { id: 'bersama', label: 'Fasilitas Bersama', count: facilities.bersama.length },
-    { id: 'keamanan', label: 'Keamanan & Parkir', count: facilities.keamanan.length },
+    { id: 'kamar', label: 'Fasilitas Kamar', count: facilities?.kamar?.length || 0 },
+    { id: 'bersama', label: 'Fasilitas Bersama', count: facilities?.bersama?.length || 0 },
+    { id: 'keamanan', label: 'Keamanan & Parkir', count: facilities?.keamanan?.length || 0 },
   ];
 
-  const currentFacilities = facilities[activeTab] || [];
+  const currentFacilities = facilities?.[activeTab] || [];
 
   return (
     <section id="fasilitas" className="py-20 bg-white relative">

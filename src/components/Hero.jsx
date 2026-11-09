@@ -20,10 +20,14 @@ export default function Hero({ kosInfo, stats }) {
             
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-              Hunian Kost Modern,{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">
-                Nyaman & Siap Huni
-              </span>
+              {kosInfo.tagline || (
+                <>
+                  Hunian Kost Modern,{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">
+                    Nyaman & Siap Huni
+                  </span>
+                </>
+              )}
             </h1>
 
             {/* Subtitle */}
@@ -87,8 +91,8 @@ export default function Hero({ kosInfo, stats }) {
               {/* Main Photo Card */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] sm:aspect-[16/11]">
                 <img
-                  src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80"
-                  alt="Kamar Kost Graha Asri"
+                  src={kosInfo.heroImage || 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80'}
+                  alt={kosInfo.name}
                   className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

@@ -510,7 +510,7 @@ export default function AdminDashboard({
     if (res?.success) {
       setSaveMessage(
         isSupabaseConnected
-          ? 'Data berhasil disimpan langsung ke Database Supabase!'
+          ? 'Perubahan berhasil disimpan ke Database Supabase!'
           : 'Data berhasil diterapkan ke browser!'
       );
     } else {
@@ -622,15 +622,24 @@ export default function AdminDashboard({
             <button
               onClick={handleSaveToBrowser}
               disabled={isSaving}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold shadow-md shadow-emerald-600/20 transition-all disabled:opacity-50"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold shadow-md shadow-emerald-600/20 transition-all disabled:opacity-50 cursor-pointer"
             >
               <Save className="w-4 h-4" />
               <span>{isSaving ? 'Menyimpan...' : isSupabaseConnected ? 'Simpan ke Supabase' : 'Terapkan Perubahan'}</span>
             </button>
 
             <button
+              onClick={onBackToLanding}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold border border-slate-200 transition-all cursor-pointer"
+              title="Lihat Tampilan Landing Page"
+            >
+              <Eye className="w-4 h-4 text-emerald-600" />
+              <span>Lihat Landing Page</span>
+            </button>
+
+            <button
               onClick={handleDownloadJSON}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm font-semibold transition-all"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs sm:text-sm font-semibold transition-all cursor-pointer"
               title="Download file kosData.json yang baru untuk ditimpa ke repository"
             >
               <Download className="w-4 h-4" />
