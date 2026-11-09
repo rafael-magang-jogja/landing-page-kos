@@ -15,6 +15,7 @@ import {
   Trash2,
   Upload,
   Image,
+  Sparkles,
 } from 'lucide-react';
 import { uploadKosImage } from '../lib/supabase';
 
