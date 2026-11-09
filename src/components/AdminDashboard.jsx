@@ -285,6 +285,13 @@ export default function AdminDashboard({
   // Local state copy of kos data
   const [formData, setFormData] = useState(JSON.parse(JSON.stringify(data)));
 
+  // Pastikan form selalu sinkron dengan data terbaru yang ditarik dari database Supabase
+  useEffect(() => {
+    if (data) {
+      setFormData(JSON.parse(JSON.stringify(data)));
+    }
+  }, [data]);
+
   const handleLogin = (e) => {
     e.preventDefault();
     if (pinInput === ADMIN_PIN) {
